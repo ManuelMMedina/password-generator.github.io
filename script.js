@@ -2,12 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordField = document.getElementById("password");
     const generateBtn = document.getElementById("generate-btn");
     const copyBtn = document.getElementById("copy-btn");
+    const labelLength = document.getElementById("password-length");
 
     generateBtn.addEventListener("click", generatePassword)
     copyBtn.addEventListener("click", copyToClickBoard)
 
     function generatePassword() {
-        const length = 12;
+        let length = labelLength.value;
+        if (length < 6) {
+            labelLength.value = 6;
+            length = 6
+        }
+        else if (length > 20) {
+            labelLength.value = 20;
+            length = 20
+        }
         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz1234567890'@#$%&/?¿¡!+-*"
         let password = "";
         for (let i = 0; i < length; i++) {

@@ -12,8 +12,13 @@
     <div class="container">
         <h1>Generador de contraseñas</h1>
         <div class="password-box">
-            <label for="password"></label><input type="text" id="password" readonly>
-            <button id="copy-btn" title="Copiar"><i class="fas fa-copy"></i></button>
+            <div class="password-generator">
+                <label for="password"></label><input type="text" id="password">
+                <button id="copy-btn" title="Copiar"><i class="fas fa-copy"></i></button>
+            </div>
+            <div class="password-label">
+                <label for="password-length" id="label-password-length"></label>Longitud: <input type="number" id="password-length" min="6" max="20" value="12">
+            </div>
         </div>
         <button id="generate-btn">Generara contraseña</button>
     </div>
